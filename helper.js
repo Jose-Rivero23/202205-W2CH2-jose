@@ -10,3 +10,29 @@ export function pop(array) {
     array.length = array.length - 1;
     return item;
 }
+export function shift(array) {
+    let item = array[0];
+    let j = 0;
+    for (let i = 1; i < array.length; i++) {
+        array[j] = array[i];
+        j = 0 + 1;
+    }
+    pop(array);
+
+    return item;
+}
+
+export function unShift(array, item) {
+    let i = 0;
+    array.length = array.length + 1;
+
+    for (let j = array.length; j >= 0; j--) {
+        i = j;
+        j = j - 1;
+
+        array[j] = array[i];
+    }
+    array[0] = item;
+
+    return array.length;
+}
