@@ -8,6 +8,8 @@ import {
     some,
     everyFunction,
     every,
+    filter,
+    find,
 } from './helper.js';
 
 describe('function arrayLength []', () => {
@@ -103,6 +105,32 @@ describe('Given the function every', () => {
             const param1 = [56, 67, 41];
             const param2 = every(param1, everyFunction);
             expect(param2).toBe(true);
+        });
+    });
+});
+
+describe('Given the function find', () => {
+    describe('When receive [18 , 16, 20 ,25] , func', () => {
+        test('should first number > 19', () => {
+            const param1 = [18, 16, 20, 25];
+            const func = (item) => {
+                return item > 19;
+            };
+            const result = find(param1, func);
+            expect(result).toBe(20);
+        });
+    });
+});
+
+describe('Given the function filter', () => {
+    describe('When receive [18 , 16, 20 ,25] , func', () => {
+        test('should all number > 19', () => {
+            const param1 = [18, 16, 20, 25];
+            const func = (item) => {
+                return item > 19;
+            };
+            const result = filter(param1, func);
+            expect(result).toContain(20, 25);
         });
     });
 });

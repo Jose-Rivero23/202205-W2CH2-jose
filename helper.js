@@ -62,9 +62,24 @@ export function every(array, foo) {
 }
 
 export function everyFunction(item) {
-    if (item > 40) {
-        return true;
-    } else {
-        return false;
+    return item > 10;
+}
+
+export function find(array, foo) {
+    for (let h = 0; h < array.length; h++) {
+        if (foo(array[h]) === true) {
+            return array[h];
+        }
     }
+    return false;
+}
+
+export function filter(array, foo) {
+    const cont = [];
+    for (let h = 0; h < array.length; h++) {
+        if (foo(array[h]) === true) {
+            push(cont, array[h]);
+        }
+    }
+    return cont;
 }
