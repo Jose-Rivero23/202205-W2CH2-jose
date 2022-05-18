@@ -1,4 +1,14 @@
-import { arrayLength, pop, push, shift, unShift } from './helper.js';
+import {
+    arrayLength,
+    pop,
+    push,
+    shift,
+    someFunction,
+    unShift,
+    some,
+    everyFunction,
+    every,
+} from './helper.js';
 
 describe('function arrayLength []', () => {
     test('When receive []', () => {
@@ -73,6 +83,26 @@ describe('Given the function push', () => {
             const manzana = [50, 60];
             unShift(manzana, 98);
             expect(manzana[0]).toBe(98);
+        });
+    });
+});
+
+describe('Given the function some', () => {
+    describe('When receive [15 , 7 , 9], someFunction', () => {
+        test('they should be false', () => {
+            const param1 = [15, 8, 9];
+            const param2 = some(param1, someFunction);
+            expect(param2).toBe(true);
+        });
+    });
+});
+
+describe('Given the function every', () => {
+    describe('When receive [16 , 18 , 20]', () => {
+        test('they should be a true', () => {
+            const param1 = [56, 67, 41];
+            const param2 = every(param1, everyFunction);
+            expect(param2).toBe(true);
         });
     });
 });
