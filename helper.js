@@ -39,22 +39,18 @@ export function unShift(array, item) {
 
 export function some(array, foo) {
     for (let j = 0; j < array.length; j++) {
-        if (someFunction(array[j]) === true) {
+        if (foo(array[j]) === true) {
             return true;
         }
     }
     return false;
 }
 export function someFunction(item) {
-    if (item % 2 === 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return item % 2 === 0;
 }
 export function every(array, foo) {
     for (let j = 0; j < array.length; j++) {
-        if (everyFunction(array[j]) === false) {
+        if (foo(array[j]) === false) {
             return false;
         }
     }
