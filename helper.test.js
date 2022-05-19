@@ -28,8 +28,8 @@ describe('function arrayLength []', () => {
 describe('Given the function push', () => {
     describe('When receive [1 , 6 , 9], 1', () => {
         test('they should be 4', () => {
-            const param1 = [];
-            const param2 = push([1, 6, 9], 1);
+            const param1 = [1, 6, 9];
+            const param2 = push(param1, 1);
             expect(param2).toBe(4);
         });
     });
@@ -72,11 +72,11 @@ describe('Given the function shift', () => {
         });
     });
 });
-describe('Given the function push', () => {
+describe('Given the function unShift', () => {
     describe('When receive [1 , 6 , 9], 18', () => {
         test('they should be 4', () => {
-            const param1 = [];
-            const param2 = unShift([1, 6, 9], 18);
+            const param1 = [1, 6, 9];
+            const param2 = unShift(param1, 18);
             expect(param2).toBe(4);
         });
     });
